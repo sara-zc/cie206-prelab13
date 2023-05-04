@@ -1,32 +1,3 @@
-<head>
-<style>
-    body{
-        font-family: Georgia, sans-serif;
-        font-size: 12pt;
-    }
-    h3{
-        font-weight: bold;
-    }
-    img{
-        width: 90%;
-        height: auto;
-    }
-    img + figcaption{
-        text-align: center;
-    }
-    img + figcaption a{
-        color: grey;
-    }
-    .pagebreak { page-break-after: always; }
-</style>
-</head>
-
-<div style="text-align:center;">
-<img alt="ZC logo" src="../zc_header.png" style="width:100%;">
-</div>
-
-<br>
-
 # Lab 12 - Graphs and Charts in Razor Pages
 
 ## Types of Charts
