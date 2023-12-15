@@ -114,6 +114,64 @@ Output:
 
 ![Example Output](example_output.png)
 
+### Another Method to use Chart.js in HTML
+1. Create a canvas
+```html
+<div class="chart-container" width="600" height="400">
+    <canvas id="barChart"></canvas>
+</div>
+```
+2. Add the script to create the chart. 
+```html
+<script type="module">
+    document.addEventListener('DOMContentLoaded', (event) => {
+
+        var ctx = document.getElementById('barChart');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            responsive: true,
+            data:
+            {
+                labels: ('@Model.labels').split(","),
+                datasets: [{
+                    label: 'Favourite Colors Votes',
+                    data: ('@Model.data').split(","),
+                    borderWidth: 1
+                }]
+            },  
+            options:
+            {
+                scales:
+                {
+                    y: [{
+                        ticks:
+                        {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            } 
+        });
+    });
+</script>
+```
+3. To finish this project, we need to write the "code-behind" for the OnGet method.
+
+```c#
+public class IndexModel : PageModel
+{
+    [BindProperty]
+    public string labels { get; set; };
+    [BindProperty]
+    public string data {get; set;}
+    [BindProperty]
+    public void OnGet()
+    {
+      labels = "Red, Blue, Yellow, Green, Purple, Orange";
+      data = "12, 19, 3, 5, 2, 3";
+    }
+}
+```
 ## Resources and Other Ways of Drawing Charts
 - You may look into the Chart Helper, but it only works for .NET Framework projects. It does not work for .NET Core.
 - You may also look into Google Charts. It has a fairly similar setup to ChartJs. Here's an article about [Integrating Google Charts in ASP.NET Core](https://dotnetthoughts.net/integrating-google-charts-in-aspnet-core/)
