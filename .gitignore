@@ -2,4 +2,8 @@ Chart-ASPNETCore-Example/
 /.vs
 /*/obj/
 /*/bin/
+obj/
+bin/
+*.vs/
 ChartExample/
+*.mp4

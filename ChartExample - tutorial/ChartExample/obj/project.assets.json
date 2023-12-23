@@ -519,11 +519,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sara\\Desktop\\Lab 11\\ChartExample\\ChartExample\\ChartExample.csproj",
+      "projectUniqueName": "D:\\Sarah files\\_WORK\\CIE206\\Lab12\\ChartExample - tutorial\\ChartExample\\ChartExample.csproj",
       "projectName": "ChartExample",
-      "projectPath": "C:\\Users\\Sara\\Desktop\\Lab 11\\ChartExample\\ChartExample\\ChartExample.csproj",
+      "projectPath": "D:\\Sarah files\\_WORK\\CIE206\\Lab12\\ChartExample - tutorial\\ChartExample\\ChartExample.csproj",
       "packagesPath": "C:\\Users\\Sara\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sara\\Desktop\\Lab 11\\ChartExample\\ChartExample\\obj\\",
+      "outputPath": "D:\\Sarah files\\_WORK\\CIE206\\Lab12\\ChartExample - tutorial\\ChartExample\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Sara\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -580,7 +580,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

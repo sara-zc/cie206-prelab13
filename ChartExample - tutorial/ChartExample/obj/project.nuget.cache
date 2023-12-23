@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hP+iQQSr1aXji1kax8J7MX96hRKiTbiqVe8a7O7neN5ckkdq4jjIEt20SOR2vWgA4n+jGZqEv19Dcc9qA7PJJg==",
+  "dgSpecHash": "O/kIjXLiLV/51C2lSXtoVBLojxrAjjiX0g2fEApH7WN4chSlmbrbRiN3UHsFyOi0IcgldKs7eeQoPpnnkyeTTA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Sara\\Desktop\\Lab 11\\ChartExample\\ChartExample\\ChartExample.csproj",
+  "projectFilePath": "D:\\Sarah files\\_WORK\\CIE206\\Lab12\\ChartExample - tutorial\\ChartExample\\ChartExample.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sara\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Sara\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
