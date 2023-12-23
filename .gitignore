@@ -4,6 +4,7 @@ Chart-ASPNETCore-Example/
 /*/bin/
 obj/
 bin/
+.vs/
 *.vs/
 ChartExample/
 *.mp4
