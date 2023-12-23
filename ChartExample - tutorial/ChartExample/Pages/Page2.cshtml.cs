@@ -11,10 +11,8 @@ namespace ChartExample.Pages
         public ChartJs Chart { get; set; }
         public string ChartJson { get; set; }
 
-        private readonly ILogger<IndexModel> _logger;
-        public Page2Model(ILogger<IndexModel> logger)
+        public Page2Model()
         {
-            _logger = logger;
         }
 
         public void OnGet()
@@ -56,7 +54,7 @@ namespace ChartExample.Pages
                 Chart = JsonConvert.DeserializeObject<ChartJs>(chartData);
                 // set up the labels
                 string[] labelsArray = { "Red", "Blue", "Yellow", "Green", "Purple", "Orange" };
-                Chart.data.labels = labelsArray;
+                Chart.data.labels = labelsArray.ToList();
                 // set up the dataset
                 Dataset dataset = new Dataset();
                 Chart.data.datasets[0].label = "Favourite Colors Votes";

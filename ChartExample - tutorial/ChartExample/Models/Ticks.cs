@@ -2,6 +2,6 @@
 {
     public class Ticks
     {
-        public bool beginAtZero { get; set; }
+        public bool beginAtZero { get; set; } = true;
     }
 }

@@ -2,7 +2,11 @@
 {
     public class Data
     {
-        public string[] labels { get; set; }
-        public Dataset[] datasets { get; set; }
+        public Data()
+        {
+            datasets = new List<Dataset>();
+        }
+        public List<string> labels { get; set; }
+        public List<Dataset> datasets { get; set; }
     }
 }

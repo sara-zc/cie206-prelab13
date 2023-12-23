@@ -11,71 +11,47 @@ namespace ChartExample.Pages
 
         public ChartJs Chart { get; set; }
         public string ChartJson { get; set; }
+        public DB db { get; set; }
 
-        private readonly ILogger<IndexModel> _logger;
-
-        public Page3Model(ILogger<IndexModel> logger)
+        public Page3Model(DB db)
         {
-            _logger = logger;
+            Chart = new ChartJs();
+            this.db = db;
         }
 
         public void OnGet()
         {
-            StudentInfo student_data = new StudentInfo();
-            DB db = new DB();
-            List<string> codeEditors = db.getCodeEditors();
-            var chartData = @"
-            {
-            type: 'bar',
-            responsive: true,
-            data:
-            {
-                datasets: [{
-                    backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                        ],
-                    borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                        ],
-                    borderWidth: 1
-                }]
-            },  
-            options:
-            {
-                scales:
-                {
-                    y: [{
-                        ticks:
-                        {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            } 
-        }"; //end of chartdata
-
+            Dictionary<string, int> codeEditorVotes = db.getCodeEditors();
+            setUpChart(codeEditorVotes);
+        }
+        private void setUpChart(Dictionary<string, int> dataToDisplay)
+        {
             try
             {
-                Chart = JsonConvert.DeserializeObject<ChartJs>(chartData);
-                // set up the labels
-                //string[] labelsArray = { "Red", "Blue", "Yellow", "Green", "Purple", "Orange" };
-                string[] labelsArray = codeEditors.ToArray();
-                Chart.data.labels = labelsArray;
-                // set up the dataset
-                Chart.data.datasets[0].label = "Favourite Code Editors Votes";
-                int[] dataArray = Enumerable.Range(1, codeEditors.Count).ToArray();
-                Chart.data.datasets[0].data = dataArray;
+                // 1. set up chart options
+                Chart.type = "bar";
+                Chart.responsive = true;
 
+                // 2. separate the received Dictionary data into labels and data arrays
+                var labelsArray = new List<string>();
+                var dataArray = new List<int>();
+
+                foreach (var data in dataToDisplay)
+                {
+                    labelsArray.Add(data.Key);
+                    dataArray.Add(data.Value);
+                }
+
+                Chart.data.labels = labelsArray;
+
+                // 3. set up a dataset
+                var firsDataset = new Dataset();
+                firsDataset.label = "Favourite Code Editors Votes";
+                firsDataset.data = dataArray.ToArray();
+
+                Chart.data.datasets.Add(firsDataset);
+
+                // 4. finally, convert the object to json to be able to inject in HTML code
                 ChartJson = JsonConvert.SerializeObject(Chart, new JsonSerializerSettings
                 {
                     NullValueHandling = NullValueHandling.Ignore,
@@ -83,11 +59,9 @@ namespace ChartExample.Pages
             }
             catch (Exception e)
             {
-                Console.WriteLine("Exception initialising the chart inside page3.cshtml.cs");
+                Console.WriteLine("Error initialising the chart inside page3.cshtml.cs");
                 throw e;
             }
-
-
         }
     }
 }

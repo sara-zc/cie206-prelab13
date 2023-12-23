@@ -2,6 +2,12 @@
 {
     public class ChartJs
     {
+        public ChartJs()
+        {
+            options = new Options();
+            data = new Data();
+            title = new Title();
+        }
         public string type { get; set; }
         public int duration { get; set; }
         public string easing { get; set; }

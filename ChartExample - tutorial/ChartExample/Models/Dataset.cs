@@ -9,5 +9,5 @@
         public int borderWidth { get; set; }
         public string yAxisID { get; set; }
         public string xAxisID { get; set; }
-}
+    }
 }

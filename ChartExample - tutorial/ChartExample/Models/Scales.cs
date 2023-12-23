@@ -2,7 +2,12 @@
 {
     public class Scales
     {
-        public yAxes[] yAxes { get; set; }
-        public xAxes[] xAxes { get; set; }
+        public Scales()
+        {
+            yAxes = new List<yAxes>();
+            yAxes = new List<yAxes>();
+        }
+        public List<yAxes> yAxes { get; set; }
+        public List<xAxes> xAxes { get; set; }
     }
 }
