@@ -1,3 +1,5 @@
-Chart-ASPNETCore-Example
+Chart-ASPNETCore-Example/
 /.vs
-ChartExample
+/*/obj/
+/*/bin/
+ChartExample/
