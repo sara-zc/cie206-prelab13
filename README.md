@@ -1,4 +1,4 @@
-# Lab 12 - Graphs and Charts in Razor Pages
+# Graphs and Charts in Razor Pages
 
 ## Types of Charts
 <img src="chart-types.png"></img>
@@ -24,7 +24,7 @@
 ```
 3. Hit Ctrl-S to save and Visual Studio will download the package to your destination folder (wwwroot/lib/chartjs in this case).
 4. Install the latest version of **Newtonsoft.Json** from NuGet.
-5. Go to this [Google drive link](https://drive.google.com/drive/folders/1ON3KzAw0Pbh0TAFO4VcExjQvIvTJuOpM?usp=sharing) and download all the files inside the Chart folder. Add them to your project inside a Models folder.
+5. Go to this [Google drive link](https://drive.google.com/drive/folders/1newlwaaepgWHAZVck18ejxcdue_2OmMa?usp=drive_link) and download all the files inside the "ChartJs Files" folder. Add them to your project inside a Models folder.
 6. Once you have your models in a folder in your project, the next step is to add the JavaScript to the `_Layout.cshtml` as the last line in HTML:
 ```html
 <script type="module" src="~/lib/chartjs/chart.umd.js"></script>
