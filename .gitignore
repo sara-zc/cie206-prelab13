@@ -2,8 +2,6 @@ Chart-ASPNETCore-Example/
 /.vs
 /*/obj/
 /*/bin/
-obj/
-bin/
 .vs/
 *.vs/
 ChartExample/

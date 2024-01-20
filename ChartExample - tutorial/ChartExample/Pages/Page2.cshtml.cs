@@ -58,7 +58,7 @@ namespace ChartExample.Pages
                 // set up the dataset
                 Dataset dataset = new Dataset();
                 Chart.data.datasets[0].label = "Favourite Colors Votes";
-                int[] dataArray = { 12, 19, 3, 5, 2, 3 };
+                double[] dataArray = { 12, 19, 3, 5, 2, 3 };
                 Chart.data.datasets[0].data = dataArray;
 
                 ChartJson = JsonConvert.SerializeObject(Chart, new JsonSerializerSettings

@@ -7,5 +7,6 @@
             scales = new Scales();
         }
         public Scales scales { get; set; }
+        public bool responsive { get; set; }
     }
 }

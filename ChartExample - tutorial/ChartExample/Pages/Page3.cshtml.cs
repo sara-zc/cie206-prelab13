@@ -30,11 +30,11 @@ namespace ChartExample.Pages
             {
                 // 1. set up chart options
                 Chart.type = "bar";
-                Chart.responsive = true;
+                Chart.options.responsive = true;
 
                 // 2. separate the received Dictionary data into labels and data arrays
                 var labelsArray = new List<string>();
-                var dataArray = new List<int>();
+                var dataArray = new List<double>();
 
                 foreach (var data in dataToDisplay)
                 {

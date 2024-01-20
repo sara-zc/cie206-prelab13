@@ -66,21 +66,20 @@ namespace ChartExample.Models
 
         public Dictionary<string, int> getCodeEditors()
         {
-            DataTable dt = new DataTable();
-            List<string> codeEditorsList = new List<string>();
             Dictionary<string, int> labelsAndCounts = new Dictionary<string, int>();
 
             try
             {
                 con.Open();
+                // todo: change into query
                 SqlCommand cmd = new SqlCommand("spGetCodeEditors", con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataReader sdr = cmd.ExecuteReader();
 
+                // store labels and counts inside the dictionary
                 while (sdr.Read())
                 {
-                    //codeEditorsList.Add(sdr["code_editor"].ToString());
                     labelsAndCounts.Add(sdr["code_editor"].ToString(), (int)sdr["count"]);
                 }
             }
